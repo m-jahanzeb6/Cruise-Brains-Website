@@ -6,7 +6,6 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import cruiseBrains from '@/images/CruiseBrains.png'
 import {
   TwitterIcon,
   InstagramIcon,
@@ -142,12 +141,7 @@ export default function Home({ services }) {
             is dedicated to delivering reliable and user-friendly software that
             meets the unique needs of each of our clients.
           </p>
-          <Image
-              src={cruiseBrains}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className=" inset-0 h-full w-full object-cover"
-            />
+          
           <br />
 
           <p className="text-base text-zinc-600 dark:text-zinc-400">

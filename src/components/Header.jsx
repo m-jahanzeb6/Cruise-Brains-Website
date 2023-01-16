@@ -231,7 +231,7 @@ function AvatarContainer({ className, ...props }) {
       className,
       ...props
     }) {
-  console.log(isDarkMode)
+
   return (
     <>
       
