@@ -5,8 +5,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import cruiseBrainsW from '@/images/CruiseBrainsw.png'
-import cruiseBrainsD from '@/images/CruiseBrains.png'
+import cruiseBrains from '@/images/CruiseBrains.png'
 import { Fragment, useEffect, useRef } from 'react'
 
 function CloseIcon(props) {
@@ -173,6 +172,11 @@ function DesktopNavigation(props) {
   )
 }
 
+function clamp( number, a, b, ) {
+  let min = Math.min(a, b)
+  let max = Math.max(a, b)
+  return Math.min(Math.max(number, min), max)
+}
 function ModeToggle() {
   function disableTransitionsTemporarily() {
     document.documentElement.classList.add('[&_*]:!transition-none')
@@ -183,18 +187,17 @@ function ModeToggle() {
 
   function toggleMode() {
     disableTransitionsTemporarily()
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = document.documentElement.classList.toggle('dark')
+    var darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    var isSystemDarkMode = darkModeMediaQuery.matches
+    var isDarkMode = document.documentElement.classList.toggle('dark')
 
     if (isDarkMode === isSystemDarkMode) {
       delete window.localStorage.isDarkMode
     } else {
       window.localStorage.isDarkMode = isDarkMode
     }
-    console.log(isDarkMode)
+    Avatar(isDarkMode)
   }
-
 
   return (
     <button
@@ -209,66 +212,50 @@ function ModeToggle() {
   )
 }
 
-function clamp(number, a, b) {
-  let min = Math.min(a, b)
-  let max = Math.max(a, b)
-  return Math.min(Math.max(number, min), max)
-}
-
 function AvatarContainer({ className, ...props }) {
+  
   return (
     <div
-      className={clsx(
-        className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+    className={clsx(
+      className,
+      'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
       )}
       {...props}
-    />
-  )
-}
-
-function Avatar({
-  isDarkMode,
-  large = false,
-  className,
-  ...props
-}) 
-{
-
+      />
+      )
+    }
+    
+    function Avatar({
+      isDarkMode,
+      large = false,
+      className,
+      ...props
+    }) {
+  console.log(isDarkMode)
   return (
-    <Link
-      href="/"
-      aria-label="Home"
-      className={clsx(className, 'pointer-events-auto')}
-      {...props}
-    >
-       {isDarkMode ? (
-        <Image
-          src={cruiseBrainsD}
-          alt=""
-          sizes={large ? '4rem' : '2.25rem'}
-          className={clsx(
-            ' bg-zinc-100 object-cover dark:bg-zinc-800 rounded-full',
-            large ? 'h-16 w-16' : 'h-9 w-9'
-          )}
-          priority={true}
-        />
-      ) : (
-        <Image
-          src={cruiseBrainsW}
-          alt=""
-          sizes={large ? '4rem' : '2.25rem'}
-          className={clsx(
-            'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-            large ? 'h-16 w-16' : 'h-9 w-9'
-          )}
-          priority={true}
-        />
-        )}
-    </Link>
-
-)
-console.log(isDarkMode)
+    <>
+      
+        <Link
+          href="/"
+          aria-label="Home"
+          className={clsx(className, 'pointer-events-auto')}
+          {...props}
+        >
+          <Image
+            src={cruiseBrains}
+            alt=""
+            sizes={large ? '4rem' : '2.25rem'}
+            className={clsx(
+              ' rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+              large ? 'h-16 w-16' : 'h-9 w-9'
+            )}
+            priority
+          />
+        </Link>
+      
+      
+    </>
+  )
 }
 
 export function Header() {

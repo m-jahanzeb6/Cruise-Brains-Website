@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
+import cruiseBrains from '@/images/CruiseBrains.png'
 import {
   TwitterIcon,
   InstagramIcon,
@@ -44,8 +45,6 @@ function MailIcon(props) {
     </svg>
   )
 }
-
-
 
 function Service({ service }) {
   return (
@@ -97,8 +96,6 @@ function Contactus() {
   )
 }
 
-
-
 function Photos() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
@@ -130,12 +127,8 @@ export default function Home({ services }) {
   return (
     <>
       <Head>
-        <title>
-          Cruise Brians - Software development company
-        </title>
-        <meta
-          name="description"
-        />
+        <title>Cruise Brians - Software development company</title>
+        <meta name="description" />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
@@ -149,9 +142,13 @@ export default function Home({ services }) {
             is dedicated to delivering reliable and user-friendly software that
             meets the unique needs of each of our clients.
           </p>
-
+          <Image
+              src={cruiseBrains}
+              alt=""
+              sizes="(min-width: 640px) 18rem, 11rem"
+              className=" inset-0 h-full w-full object-cover"
+            />
           <br />
-
 
           <p className="text-base text-zinc-600 dark:text-zinc-400">
             We use the latest technologies and agile methodologies to ensure
@@ -168,37 +165,39 @@ export default function Home({ services }) {
             business thrive. We look forward to working with you!
           </p>
 
-          { <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://instagram.com"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
-            <SocialLink
-              href="https://github.com"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
-              href="https://linkedin.com"
-              aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
-            />
-          </div> }
+          {
+            <div className="mt-6 flex gap-6">
+              <SocialLink
+                href="https://twitter.com"
+                aria-label="Follow on Twitter"
+                icon={TwitterIcon}
+              />
+              <SocialLink
+                href="https://instagram.com"
+                aria-label="Follow on Instagram"
+                icon={InstagramIcon}
+              />
+              <SocialLink
+                href="https://github.com"
+                aria-label="Follow on GitHub"
+                icon={GitHubIcon}
+              />
+              <SocialLink
+                href="https://linkedin.com"
+                aria-label="Follow on LinkedIn"
+                icon={LinkedInIcon}
+              />
+            </div>
+          }
         </div>
       </Container>
       <Photos />
 
       <Container className="mt-24 md:mt-28">
-          <div className='text-5xl text-center text-zinc-600 dark:text-zinc-300 uppercase rounded-lg w-full py-2'>
-            <h1>Our Services</h1>
-          </div>
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2 mt-10">
+        <div className="w-full rounded-lg py-2 text-center text-5xl uppercase text-zinc-600 dark:text-zinc-300">
+          <h1>Our Services</h1>
+        </div>
+        <div className="mx-auto mt-10 grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {services.map((service) => (
               <Service key={service.slug} service={service} />

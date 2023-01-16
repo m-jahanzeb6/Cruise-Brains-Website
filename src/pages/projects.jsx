@@ -23,7 +23,7 @@ const projects = [
     logo: callLink,
   },
   {
-    name: 'HelioStream',
+    name: 'Monitize Text',
     description:
       'A Laravel based SMS marketing application.',
     link: { href: 'https://monitizetext.com', label: 'Monitizetext.com' },
