@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
-import cruiseBrains from '../images/CruiseBrains.png'
+import cruiseBrains from '../images/CruiseBrains (1).png'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -74,17 +74,17 @@ export default function Jobs() {
                 <Image
                   src={job.logo}
                   alt=""
-                  className="h-8 w-8"
+                  className="h-12 w-12"
                   unoptimized
                 />
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={job.link}>{job.name}</Card.Link>
+                <Card.Link href={`#`}>{job.name}</Card.Link>
               </h2>
               <Card.Description>{job.description}</Card.Description>
               <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2" onCl>{job.link}</span>
+                <span className="ml-2"  onClick={() => router.back()}>{job.link}</span>
               </p>
             </Card>
           ))}
