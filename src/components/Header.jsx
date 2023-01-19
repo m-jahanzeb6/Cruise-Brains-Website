@@ -5,7 +5,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import cruiseBrains from '@/images/CruiseBrains.png'
+import cruiseBrains from '@/images/CruiseBrains (1).png'
 import { Fragment, useEffect, useRef } from 'react'
 
 function CloseIcon(props) {
@@ -124,7 +124,7 @@ function MobileNavigation(props) {
                 <MobileNavItem href="/">Home</MobileNavItem>
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/services">Services</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
+                <MobileNavItem href="/Jobs">Jobs</MobileNavItem>
                 <MobileNavItem href="/contact">Contact</MobileNavItem>
               </ul>
             </nav>
@@ -165,7 +165,7 @@ function DesktopNavigation(props) {
         <NavItem href="/">Home</NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href="/services">Services</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
+        <NavItem href="/jobs">Jobs</NavItem>
         <NavItem href="/contact">Contact</NavItem>
       </ul>
     </nav>
@@ -218,7 +218,7 @@ function AvatarContainer({ className, ...props }) {
     <div
     className={clsx(
       className,
-      'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
+      'h-12 w-12 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10'
       )}
       {...props}
       />
@@ -247,7 +247,7 @@ function AvatarContainer({ className, ...props }) {
             sizes={large ? '4rem' : '2.25rem'}
             className={clsx(
               ' rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-              large ? 'h-16 w-16' : 'h-9 w-9'
+              large ? 'h-20 w-20' : 'h-12 w-12'
             )}
             priority
           />

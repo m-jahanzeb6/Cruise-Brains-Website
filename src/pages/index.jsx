@@ -129,7 +129,7 @@ export default function Home({ services }) {
         <title>Cruise Brians - Software development company</title>
         <meta name="description" />
       </Head>
-      <Container className="mt-9">
+      <Container className="mt-14">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Cruise Brains

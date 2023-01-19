@@ -1,33 +1,41 @@
 import Image from 'next/image'
 import Head from 'next/head'
+import cruiseBrains from '../images/CruiseBrains.png'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import callScaler from '@/images/logos/callScaler.png'
-import callLink from '@/images/logos/callLink.ico'
-import mT from '@/images/logos/MT-logo.jpg'
+// import callScaler from '@/images/logos/callScaler.png'
+// import callLink from '@/images/logos/callLink.ico'
+// import mT from '@/images/logos/MT-logo.jpg'
 
-const projects = [
+const jobs = [
   {
-    name: 'Call Scaler',
+    name: 'Senior PHP Dev',
     description:
-      'Call Scaler makes it dead simple to get call tracking numbers and track inbound calls with your team, clients, or affiliates ',
-    link: { href: 'https://callscaler.com', label: 'CallScaler.com' },
-    logo: callScaler,
+      'Senior PHP Developer needed for a full-time position at a software company. Strong experience with PHP and MVC frameworks required. Competitive salary and benefits offered',
+      link:'Apply Now',
+    logo: cruiseBrains,
   },
   {
-    name: 'Call Link',
+    name: 'PHP Dev',
     description:
-      'CallLink provides customer support campaign and marketing campaign for your business.',
-    link: { href: 'https://clients.callink.ca', label: 'CallLink.com' },
-    logo: callLink,
+      'PHP Developer needed for a full-time position at a software company. Experience with PHP and web development required. Competitive salary and benefits offered.',
+      link:'Apply Now',
+    logo: cruiseBrains,
   },
   {
-    name: 'Monitize Text',
+    name: 'Internship ',
     description:
-      'A Laravel based SMS marketing application.',
-    link: { href: 'https://monitizetext.com', label: 'Monitizetext.com' },
-    logo: mT,
+      'Internship opportunity available for a fresh graduates at a company. Candidates with an interest in web development and coding skills are encouraged to apply. On-the-job training and mentorship provided.',
+      link:'Apply Now',
+    logo: cruiseBrains,
+  },
+  {
+    name: 'Server Admins',
+    description:
+      'Server Administrator needed for a full-time position at a software company. Strong experience with server management, Linux, and network administration required. Competitive salary and benefits offered.',
+    link:'Apply Now',
+    logo: cruiseBrains,
   },
 ]
 
@@ -42,41 +50,41 @@ function LinkIcon(props) {
   )
 }
 
-export default function Projects() {
+export default function Jobs() {
   return (
     <>
       <Head>
-        <title>Projects - Cruise Brains</title>
+        <title>Jobs - Cruise Brains</title>
         <meta
           name="description"
-          content="Expert Software Development Projects Tailored to Your Business Need"
+          content="A World of Opportunities Awaits You at Cruise Brains"
         />
       </Head>
       <SimpleLayout
-        title="Expert Software Development Projects Tailored to Your Business Need"
-        intro="Our software company specializes in developing custom software solutions for businesses in a variety of industries. Our team of experienced developers and designers has a proven track record of delivering high-quality software products and services that meet the unique needs of our clients"
+        title="A World of Opportunities Awaits You at Cruise Brains"
+        intro="We are a dynamic software company that specializes in developing innovative solutions for our clients. We are constantly growing and looking for talented individuals to join our team. Our job openings range from entry-level positions to experienced professionals."
       >
         <ul
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {projects.map((project) => (
-            <Card as="li" key={project.name}>
+          {jobs.map((job) => (
+            <Card as="li" key={job.name}>
               <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
-                  src={project.logo}
+                  src={job.logo}
                   alt=""
                   className="h-8 w-8"
                   unoptimized
                 />
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                <Card.Link href={job.link}>{job.name}</Card.Link>
               </h2>
-              <Card.Description>{project.description}</Card.Description>
+              <Card.Description>{job.description}</Card.Description>
               <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
+                <span className="ml-2" onCl>{job.link}</span>
               </p>
             </Card>
           ))}
