@@ -34,7 +34,7 @@ export default function Contactus() {
         />
       </Head>
       <div>
-        <div className="mx-auto mt-10 w-4/5 rounded-2xl lg:max-w-6xl">
+        <div className="mx-auto mt-10 max-w-2xl rounded-2xl lg:max-w-4xl xl:max-w-6xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Please get in touch and our expert support team will answer all your
             questions.
@@ -47,7 +47,7 @@ export default function Contactus() {
 
         <form
           action="/thank-you"
-          className="mx-auto mt-10  w-4/5 rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 lg:max-w-6xl"
+          className="mx-auto mt-10 max-w-2xl rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 lg:max-w-4xl xl:max-w-6xl "
         >
           <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
             <MailIcon className="h-6 w-6 flex-none" />
@@ -88,7 +88,7 @@ export default function Contactus() {
               className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
             />
           </div>
-          <div className="ml-auto flex w-24 justify-end">
+          <div className="ml-auto w-24 justify-start">
             <Button type="submit" className={`w-20`}>
               Send
             </Button>

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Head from 'next/head'
-import cruiseBrains from '../images/CruiseBrains (1).png'
+import cruiseBrains from '../images/CruiseBrains (2).png'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
