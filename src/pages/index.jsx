@@ -81,7 +81,7 @@ function Contactus() {
 
       <div className="my-5 grid gap-6 md:grid-cols-1">
         <div className="flex flex-col">
-          <label className="mb-1 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          <label className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
             Name:
           </label>
           <input
@@ -93,7 +93,7 @@ function Contactus() {
           />
         </div>
         <div className="flex flex-col">
-          <label className="mb-1 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          <label className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
             Email:
           </label>
           <input
@@ -105,7 +105,7 @@ function Contactus() {
           />
         </div>
         <div className="flex flex-col">
-          <label className="mb-1 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          <label className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
             Contact #:
           </label>
           <input
@@ -117,7 +117,7 @@ function Contactus() {
           />
         </div>
         <div className="flex flex-col">
-          <label className="mb-1 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          <label className="mb-2 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
             Upload Resume:
           </label>
           <input
