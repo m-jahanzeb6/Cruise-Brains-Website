@@ -79,15 +79,58 @@ function Contactus() {
         <span className="ml-3">Contact us</span>
       </h2>
 
-      <div className="mt-6 flex">
-        <input
-          type="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <Button type="submit" className="ml-4 flex-none">
+      <div className="my-5 grid gap-6 md:grid-cols-1">
+        <div className="flex flex-col">
+          <label className="mb-1 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            Name:
+          </label>
+          <input
+            type="text"
+            placeholder="Full Name"
+            aria-label="Name"
+            required
+            className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="mb-1 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            Email:
+          </label>
+          <input
+            type="email"
+            placeholder="Email address"
+            aria-label="Email address"
+            required
+            className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="mb-1 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            Contact #:
+          </label>
+          <input
+            type="number"
+            placeholder="Contact"
+            aria-label="Contact"
+            required
+            className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+          />
+        </div>
+        <div className="flex flex-col">
+          <label className="mb-1 block text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            Upload Resume:
+          </label>
+          <input
+            type="file"
+            placeholder="Upload Resume"
+            aria-label="Upload Resmue"
+            required
+            className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+          />
+        </div>
+      </div>
+      <div className="ml-auto flex w-24 justify-end">
+        <Button type="submit" className={`w-20`}>
           Send
         </Button>
       </div>
@@ -141,7 +184,7 @@ export default function Home({ services }) {
             is dedicated to delivering reliable and user-friendly software that
             meets the unique needs of each of our clients.
           </p>
-          
+
           <br />
 
           <p className="text-base text-zinc-600 dark:text-zinc-400">
@@ -187,8 +230,8 @@ export default function Home({ services }) {
       </Container>
       <Photos />
 
-      <Container className="mt-24 md:mt-28">
-        <div className="w-full rounded-lg py-2 text-center text-5xl uppercase text-zinc-600 dark:text-zinc-300">
+      <Container className="mt-24 md:mt-28 ">
+        <div className="lg: w-full justify-start rounded-lg py-2 text-center text-5xl uppercase text-zinc-600 dark:text-zinc-300 lg:flex">
           <h1>Our Services</h1>
         </div>
         <div className="mx-auto mt-10 grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
