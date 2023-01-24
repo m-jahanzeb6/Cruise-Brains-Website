@@ -39,7 +39,7 @@ export default function ServicesIndex({ services }) {
   return (
     <>
       <Head>
-        <title>Services - Cruise Brains</title>
+        <title>Services - CruiseBrains</title>
         <meta
           name="description"
           content="Our expertise allows us to provide tailored solutions that meet the specific needs and challenges of each project, ensuring the success of our clients' initiatives."

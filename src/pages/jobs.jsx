@@ -9,28 +9,28 @@ const jobs = [
     name: 'Senior PHP Dev',
     description:
       'Senior PHP Developer needed for a full-time position at a software company. Strong experience with PHP and MVC frameworks required. Competitive salary and benefits offered',
-      link:{herf:'/contact', lable:'Apply Now'},
+    link: { herf: '/jobs/senior-php-dev', lable: 'Apply Now' },
     logo: cruiseBrains,
   },
   {
     name: 'PHP Dev',
     description:
       'PHP Developer needed for a full-time position at a software company. Experience with PHP and web development required. Competitive salary and benefits offered.',
-      link:{herf:'/contact', lable:'Apply Now'},
+    link: { herf: '/jobs/php-dev', lable: 'Apply Now' },
     logo: cruiseBrains,
   },
   {
     name: 'Internship ',
     description:
       'Internship opportunity available for a fresh graduates at a company. Candidates with an interest in web development and coding skills are encouraged to apply. On-the-job training and mentorship provided.',
-      link:{herf:'/contact', lable:'Apply Now'},
+    link: { herf: '/contact', lable: 'Apply Now' },
     logo: cruiseBrains,
   },
   {
     name: 'Server Admins',
     description:
       'Server Administrator needed for a full-time position at a software company. Strong experience with server management, Linux, and network administration required. Competitive salary and benefits offered.',
-    link:{herf:'/contact', lable:'Apply Now'},
+    link: { herf: '/contact', lable: 'Apply Now' },
     logo: cruiseBrains,
   },
 ]
@@ -50,14 +50,14 @@ export default function Jobs() {
   return (
     <>
       <Head>
-        <title>Jobs - Cruise Brains</title>
+        <title>Jobs - CruiseBrains</title>
         <meta
           name="description"
-          content="A World of Opportunities Awaits You at Cruise Brains"
+          content="A World of Opportunities Awaits You at CruiseBrains"
         />
       </Head>
       <SimpleLayout
-        title="A World of Opportunities Awaits You at Cruise Brains"
+        title="A World of Opportunities Awaits You at CruiseBrains"
         intro="We are a dynamic software company that specializes in developing innovative solutions for our clients. We are constantly growing and looking for talented individuals to join our team. Our job openings range from entry-level positions to experienced professionals."
       >
         <ul
@@ -66,21 +66,13 @@ export default function Jobs() {
         >
           {jobs.map((job) => (
             <Card as="li" key={job.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image
-                  src={job.logo}
-                  alt=""
-                  className="h-12 w-12"
-                  unoptimized
-                />
-              </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 <Card.Link href={job.link.herf}>{job.name}</Card.Link>
               </h2>
               <Card.Description>{job.description}</Card.Description>
               <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2"  onClick={() => router.back()}>{job.link.lable}</span>
+                <span className="ml-2">{job.link.lable}</span>
               </p>
             </Card>
           ))}

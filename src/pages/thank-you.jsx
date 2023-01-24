@@ -6,7 +6,7 @@ export default function ThankYou() {
   return (
     <>
       <Head>
-        <title>Thank you - Cruise Brains</title>
+        <title>Thank you - CruiseBrains</title>
         <meta name="description" content="Thank you for getting in touch!." />
       </Head>
       <SimpleLayout

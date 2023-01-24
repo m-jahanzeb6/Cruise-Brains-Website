@@ -38,10 +38,10 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Cruise Brains</title>
+        <title>About - CruiseBrains</title>
         <meta
           name="description"
-          content="I’m Cruise Brains. I live in New York City, where I design the future."
+          content="Leading the Way in Software Development"
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -67,6 +67,7 @@ export default function About() {
             </div>
 
           </div>
+          
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Leading the Way in Software Development.

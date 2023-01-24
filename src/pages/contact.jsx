@@ -27,14 +27,14 @@ export default function Contactus() {
   return (
     <>
       <Head>
-        <title>Contact - Cruise Brains</title>
+        <title>Contact - CruiseBrains</title>
         <meta
           name="description"
-          content="I’m Cruise Brains. I live in New York City, where I design the future."
+          content=""
         />
       </Head>
       <div>
-        <div className="mx-auto mt-10 max-w-2xl rounded-2xl lg:max-w-4xl xl:max-w-6xl">
+        <div className="mx-auto mt-10 rounded-2xl  max-w-2xl lg:max-w-4xl xl:max-w-5xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Please get in touch and our expert support team will answer all your
             questions.
@@ -47,7 +47,7 @@ export default function Contactus() {
 
         <form
           action="/thank-you"
-          className="mx-auto mt-10 max-w-2xl rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 lg:max-w-4xl xl:max-w-6xl "
+          className="mx-auto mt-10 max-w-2xl rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 lg:max-w-4xl xl:max-w-5xl "
         >
           <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
             <MailIcon className="h-6 w-6 flex-none" />

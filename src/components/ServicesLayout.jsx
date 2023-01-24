@@ -32,7 +32,7 @@ export function ServicesLayout({
   return (
     <>
       <Head>
-        <title>{`${meta.title} - Cruise Brains`}</title>
+        <title>{`${meta.title} - CruiseBrains`}</title>
         <meta name="description" content={meta.description} />
       </Head>
       <Container className="mt-16 lg:mt-32">

@@ -8,7 +8,7 @@ export async function generateRssFeed() {
   let services = await getAllServices()
   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   let author = {
-    name: 'Cruise Brains',
+    name: 'CruiseBrains',
     email: '',
   }
 
