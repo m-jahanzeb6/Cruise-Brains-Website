@@ -1,11 +1,10 @@
 import { Container } from '@/components/Container'
 import Form from '@/components/Form'
-import Router from 'next/router'
 import React from 'react'
+import Router from 'next/router'
 
 function ArrowLeftIcon(props) {
   return (
-
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
         d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
@@ -16,11 +15,12 @@ function ArrowLeftIcon(props) {
     </svg>
   )
 }
-function seniorPhpDev(previousPathname) {
+
+function Internship(previousPathname) {
   return (
     <Container className="mt-16 px-5 sm:mt-32">
-       {previousPathname && (
-        <div className='lg:absolute lg:-top-14'>
+      {previousPathname && (
+        <div className="lg:absolute lg:-top-14">
           <button
             type="button"
             onClick={() => Router.back()}
@@ -33,10 +33,11 @@ function seniorPhpDev(previousPathname) {
       )}
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <Form />
+
         <div className="lg:order-first lg:row-span-2">
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Senior PHP Developer
+              Internship
             </h1>
           </div>
 
@@ -46,35 +47,32 @@ function seniorPhpDev(previousPathname) {
                 About this position
               </h1>
               <p>
-                As a senior PHP developer, you would be a highly skilled and
-                experienced software developer who specializes in using the PHP
-                programming language to create and maintain web applications.
-                This is typically a leadership role within a software
-                development team, and you would be expected to have several
-                years of experience working with PHP and web development.
+                As an intern in a PHP development role, you would be working
+                with a team of developers to assist in the development of web
+                applications using the PHP programming language. You would be
+                under the guidance of a mentor or supervisor, who would provide
+                you with training and feedback on your work.
               </p>
             </div>
 
             <div className="w-full px-1">
               <h1 className="my-2 text-2xl text-zinc-800 dark:text-zinc-100">
-                What will you do as a Senior PHP Developer?
+                What will you do as an Interne?
               </h1>
               <ul className="list-outside list-disc">
+                <li>
+                  Assisting in the development of web applications using PHP.
+                </li>
+
                 <li>Writing clean, efficient, and well-documented code.</li>
 
                 <li>
-                  Creating and maintaining databases, as well as optimizing
-                  their performance.
-                </li>
-
-                <li>
-                  Working with various frameworks and libraries, such as
-                  Laravel, Symfony, or CodeIgniter.
+                  Collaborating with other team members to understand project
+                  requirements and deliver solutions.
                 </li>
                 <li>
-                  Collaborating with other developers, designers, and
-                  stakeholders to understand project requirements and deliver
-                  solutions.
+                  Learning and adapting to company's development practices,
+                  methodologies, and standards.
                 </li>
                 <li>
                   Troubleshooting and debugging issues that arise during
@@ -84,24 +82,22 @@ function seniorPhpDev(previousPathname) {
                   Keeping up-to-date with the latest trends, techniques, and
                   technologies in PHP development.
                 </li>
-                <li>
-                  Mentoring junior developers and helping them to improve their
-                  skills.
-                </li>
               </ul>
             </div>
 
             <p>
-              The ideal candidate for this position will have a strong
-              understanding of PHP, as well as experience with web development
-              technologies such as HTML, CSS, and JavaScript. They will also
-              have excellent problem-solving and debugging skills, and the
-              ability to work well in a team environment.
+              This internship position is an opportunity for you to gain
+              hands-on experience, learn from experienced professionals and
+              build a network of contacts in the field of PHP development. It
+              can also provide you with a competitive edge when applying for
+              full-time positions after graduation.
             </p>
             <p>
-              Strong communication skills are also essential, as you will be
-              working closely with clients and other stakeholders throughout the
-              development process.
+              To be successful in this role, you would need a good understanding
+              of the PHP language, web development principles and best
+              practices, as well as experience with web technologies such as
+              HTML, CSS, and JavaScript. Strong communication and teamwork
+              skills are also important for this role.
             </p>
           </div>
         </div>
@@ -110,4 +106,4 @@ function seniorPhpDev(previousPathname) {
   )
 }
 
-export default seniorPhpDev
+export default Internship
