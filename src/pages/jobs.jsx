@@ -5,31 +5,31 @@ import cruiseBrains from '../images/CruiseBrains (2).png'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 const jobs = [
-  {
-    name: 'Senior PHP Developer',
-    description:
-      'Senior PHP Developer needed for a full-time position at a software company. Strong experience with PHP and MVC frameworks required. Competitive salary and benefits offered',
-    link: { herf: '/jobs/senior-php-dev', lable: 'Apply Now' },
-    logo: cruiseBrains,
-  },
-  {
-    name: 'PHP Developer',
-    description:
-      'PHP Developer needed for a full-time position at a software company. Experience with PHP and web development required. Competitive salary and benefits offered.',
-    link: { herf: '/jobs/php-dev', lable: 'Apply Now' },
-    logo: cruiseBrains,
-  },
-  {
-    name: 'Server Admin',
-    description:
-      'Server Administrator needed for a full-time position at a software company. Strong experience with server management, Linux, and network administration required. Competitive salary and benefits offered.',
-    link: { herf: '/jobs/server-admin', lable: 'Apply Now' },
-    logo: cruiseBrains,
-  },
+  // {
+  //   name: 'Senior PHP Developer',
+  //   description:
+  //     'Senior PHP Developer needed for a full-time position at a software company. Strong experience with PHP and MVC frameworks required. Competitive salary and benefits offered',
+  //   link: { herf: '/jobs/senior-php-dev', lable: 'Apply Now' },
+  //   logo: cruiseBrains,
+  // },
+  // {
+  //   name: 'PHP Developer',
+  //   description:
+  //     'PHP Developer needed for a full-time position at a software company. Experience with PHP and web development required. Competitive salary and benefits offered.',
+  //   link: { herf: '/jobs/php-dev', lable: 'Apply Now' },
+  //   logo: cruiseBrains,
+  // },
+  // {
+  //   name: 'Server Admin',
+  //   description:
+  //     'Server Administrator needed for a full-time position at a software company. Strong experience with server management, Linux, and network administration required. Competitive salary and benefits offered.',
+  //   link: { herf: '/jobs/server-admin', lable: 'Apply Now' },
+  //   logo: cruiseBrains,
+  // },
   {
     name: 'Internship ',
     description:
-      'Internship opportunity available for a fresh graduates at a company. Candidates with an interest in web development and coding skills are encouraged to apply. On-the-job training and mentorship provided.',
+      'Internship opportunities are available for fresh graduates at a company. Candidates with interest in web development and coding skills are encouraged to apply. On-the-job training and mentorship provided.',
     link: { herf: '/jobs/internship', lable: 'Apply Now' },
     logo: cruiseBrains,
   },
