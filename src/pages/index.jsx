@@ -145,7 +145,7 @@ export default function Home({ services }) {
   return (
     <>
       <Head>
-        <title>Cruise Brians - Software development company</title>
+        <title>Cruise Brains - Software development company</title>
         <meta name="description" />
       </Head>
       <Container className="mt-14">
