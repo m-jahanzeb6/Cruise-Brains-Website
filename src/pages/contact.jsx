@@ -30,7 +30,7 @@ export default function Contactus() {
         <>
             <Head>
                 <title>Contact - CruiseBrains</title>
-                {DNIScript}
+
                 <meta
                     name="description"
                     content=""
