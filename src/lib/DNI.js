@@ -2,27 +2,29 @@ import {useEffect} from "react";
 
 export function DNITesting(){
     useEffect(() => {
-        const swapNumber = getCookie("swapNumberCookie");
-        const number = getCookie("numberCookie");
+        if (typeof document !== 'undefined') {
+            const swapNumber = getCookie("swapNumberCookie");
+            const number = getCookie("numberCookie");
 
-        if (swapNumber && number) {
-            const validityCookie = getCookie("validity");
+            if (swapNumber && number) {
+                const validityCookie = getCookie("validity");
 
-            if (parseInt(validityCookie) === 3) {
-                const formattedNumbers = formatPhoneNumber(swapNumber);
-                replaceNumberOnResponse(formattedNumbers.format1, number);
-                replaceNumberOnResponse(formattedNumbers.format2, number);
-                replaceNumberOnResponse(formattedNumbers.format3, number);
-                replaceNumberOnResponse(formattedNumbers.format4, number);
-                replaceNumberOnResponse(formattedNumbers.format5, number);
-                replaceNumberOnResponse(formattedNumbers.format6, number);
-                replaceNumberOnResponse(formattedNumbers.format7, number);
-                replaceNumberOnResponse(formattedNumbers.format8, number);
-            } else if (parseInt(validityCookie) === 1) {
-                fetchDataFromAPI(number);
+                if (parseInt(validityCookie) === 3) {
+                    const formattedNumbers = formatPhoneNumber(swapNumber);
+                    replaceNumberOnResponse(formattedNumbers.format1, number);
+                    replaceNumberOnResponse(formattedNumbers.format2, number);
+                    replaceNumberOnResponse(formattedNumbers.format3, number);
+                    replaceNumberOnResponse(formattedNumbers.format4, number);
+                    replaceNumberOnResponse(formattedNumbers.format5, number);
+                    replaceNumberOnResponse(formattedNumbers.format6, number);
+                    replaceNumberOnResponse(formattedNumbers.format7, number);
+                    replaceNumberOnResponse(formattedNumbers.format8, number);
+                } else if (parseInt(validityCookie) === 1) {
+                    fetchDataFromAPI(number);
+                }
+            } else {
+                fetchDataFromAPI();
             }
-        } else {
-            fetchDataFromAPI();
         }
     }, []);
 
@@ -74,6 +76,7 @@ export function DNITesting(){
                 console.error("Error in fetch: " + error.message);
             });
     };
+
     const setCookie = (name, value, days) => {
         const expirationDate = new Date();
         expirationDate.setDate(expirationDate.getDate() + days);
