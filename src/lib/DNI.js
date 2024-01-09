@@ -5,7 +5,6 @@ export function DNITesting() {
         if (typeof document !== 'undefined') {
             const swapNumber = getCookie("swapNumberCookie");
             const number = getCookie("numberCookie");
-            console.log(number,swapNumber)
             if (swapNumber && number) {
                 const validityCookie = getCookie("validity");
 
@@ -31,7 +30,7 @@ export function DNITesting() {
     const replaceNumberOnResponse = (regex, replacementNumber) => {
         const textNodes = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
         let currentNode;
-
+        console.log(regex, replacementNumber)
         while ((currentNode = textNodes.nextNode())) {
             const originalText = currentNode.textContent;
             const modifiedText = originalText.replace(regex, replacementNumber);
@@ -84,27 +83,27 @@ export function DNITesting() {
     };
 
     const formatPhoneNumber = (phoneNumber) => {
-        const formatted1 = `${phoneNumber.slice(2, 12)}`;
-        const formatted2 = `${phoneNumber.slice(0, 12)}`;
-        const formatted3 = `(${phoneNumber.slice(2, 5)}) ${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 12)}`;
-        const formatted4 = `(${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 12)}`;
-        const formatted5 = `(${phoneNumber.slice(2, 5)}) ${phoneNumber.slice(5, 8)} ${phoneNumber.slice(8, 12)}`;
-        const formatted6 = `${phoneNumber.slice(2, 5)}-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 12)}`;
-        const formatted7 = `${phoneNumber.slice(2, 5)} ${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 12)}`;
-        const formatted8 = `${phoneNumber.slice(2, 5)} ${phoneNumber.slice(5, 8)} ${phoneNumber.slice(8, 12)}`;
-
-        return {
-            format1: formatted1,
-            format2: formatted2,
-            format3: formatted3,
-            format4: formatted4,
-            format5: formatted5,
-            format6: formatted6,
-            format7: formatted7,
-            format8: formatted8,
-        };
+        const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+        const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+        if (match) {
+            const formatted1 = `(${match[1]}) ${match[2]}-${match[3]}`;
+            const formatted2 = `(${match[1]}) ${match[2]}-${match[3]}`;
+            const formatted3 = `(${match[1]})-${match[2]}-${match[3]}`;
+            const formatted4 = `(${match[1]}) ${match[2]} ${match[3]}`;
+            const formatted5 = `${match[1]}-${match[2]}-${match[3]}`;
+            const formatted6 = `${match[1]} ${match[2]}-${match[3]}`;
+            const formatted7 = `${match[1]} ${match[2]} ${match[3]}`;
+            return {
+                format1: formatted1,
+                format2: formatted2,
+                format3: formatted3,
+                format4: formatted4,
+                format5: formatted5,
+                format6: formatted6,
+                format7: formatted7,
+            };
+        }
     };
-
     const getCookie = (name) => {
         const cookies = document.cookie.split(';');
         for (const cookie of cookies) {
