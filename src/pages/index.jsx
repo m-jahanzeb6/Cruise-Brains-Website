@@ -21,7 +21,6 @@ import image5 from '@/images/photos/image-5.jpg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllServices } from '@/lib/getAllServices'
 import { formatDate } from '@/lib/formatDate'
-import {DNITesting} from "@/lib/DNI";
 
 function MailIcon(props) {
   return (
@@ -147,7 +146,6 @@ export default function Home({ services }) {
     <>
       <Head>
         <title>Cruise Brains - Software development company</title>
-        {DNITesting()}
         <meta name="description" />
       </Head>
       <Container className="mt-14">

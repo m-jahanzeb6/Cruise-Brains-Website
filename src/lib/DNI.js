@@ -1,36 +1,34 @@
 import {useEffect} from "react";
 
-export function DNITesting() {
+export function DNITesting(){
     useEffect(() => {
-        if (typeof document !== 'undefined') {
-            const swapNumber = getCookie("swapNumberCookie");
-            const number = getCookie("numberCookie");
-            console.log(number,swapNumber)
-            if (swapNumber && number) {
-                const validityCookie = getCookie("validity");
+        const swapNumber = getCookie("swapNumberCookie");
+        const number = getCookie("numberCookie");
+        if (swapNumber && number) {
+            const validityCookie = getCookie("validity");
 
-                if (parseInt(validityCookie) === 3) {
-                    const formattedNumbers = formatPhoneNumber(swapNumber);
-                    replaceNumberOnResponse(formattedNumbers.format1, number);
-                    replaceNumberOnResponse(formattedNumbers.format2, number);
-                    replaceNumberOnResponse(formattedNumbers.format3, number);
-                    replaceNumberOnResponse(formattedNumbers.format4, number);
-                    replaceNumberOnResponse(formattedNumbers.format5, number);
-                    replaceNumberOnResponse(formattedNumbers.format6, number);
-                    replaceNumberOnResponse(formattedNumbers.format7, number);
-                    replaceNumberOnResponse(formattedNumbers.format8, number);
-                } else if (parseInt(validityCookie) === 1) {
-                    fetchDataFromAPI(number);
-                }
-            } else {
-                fetchDataFromAPI();
+            if (parseInt(validityCookie) === 3) {
+                const formattedNumbers = formatPhoneNumber(swapNumber);
+                replaceNumberOnResponse(formattedNumbers.format1, number);
+                replaceNumberOnResponse(formattedNumbers.format2, number);
+                replaceNumberOnResponse(formattedNumbers.format3, number);
+                replaceNumberOnResponse(formattedNumbers.format4, number);
+                replaceNumberOnResponse(formattedNumbers.format5, number);
+                replaceNumberOnResponse(formattedNumbers.format6, number);
+                replaceNumberOnResponse(formattedNumbers.format7, number);
+                replaceNumberOnResponse(formattedNumbers.format8, number);
+            } else if (parseInt(validityCookie) === 1) {
+                fetchDataFromAPI(number);
             }
+        } else {
+            fetchDataFromAPI();
         }
     }, []);
 
     const replaceNumberOnResponse = (regex, replacementNumber) => {
         const textNodes = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
         let currentNode;
+
         while ((currentNode = textNodes.nextNode())) {
             const originalText = currentNode.textContent;
             const modifiedText = originalText.replace(regex, replacementNumber);
@@ -83,46 +81,27 @@ export function DNITesting() {
     };
 
     const formatPhoneNumber = (phoneNumber) => {
-        const cleaned = ('' + phoneNumber).replace(/\D/g, ''); // Remove non-numeric characters
-
-        const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-
-        if (match) {
-            const formatted1 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3');
-            const formatted2 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3');
-            const formatted3 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1)-$2-$3');
-            const formatted4 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1) $2 $3');
-            const formatted5 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1-$2-$3');
-            const formatted6 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1 $2-$3');
-            const formatted7 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1 $2 $3');
-            const formatted8 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1 $2 $3');
-
-            return {
-                format1: formatted1,
-                format2: formatted2,
-                format3: formatted3,
-                format4: formatted4,
-                format5: formatted5,
-                format6: formatted6,
-                format7: formatted7,
-                format8: formatted8,
-            };
-        }
-
-        // Return original if the phone number doesn't match the expected format
-        console.log(phoneNumber);
+        const formatted1 = `${phoneNumber.slice(2, 12)}`;
+        const formatted2 = `${phoneNumber.slice(0, 12)}`;
+        const formatted3 = `(${phoneNumber.slice(2, 5)}) ${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 12)}`;
+        const formatted4 = `(${phoneNumber.slice(2, 5)})-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 12)}`;
+        const formatted5 = `(${phoneNumber.slice(2, 5)}) ${phoneNumber.slice(5, 8)} ${phoneNumber.slice(8, 12)}`;
+        const formatted6 = `${phoneNumber.slice(2, 5)}-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 12)}`;
+        const formatted7 = `${phoneNumber.slice(2, 5)} ${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8, 12)}`;
+        const formatted8 = `${phoneNumber.slice(2, 5)} ${phoneNumber.slice(5, 8)} ${phoneNumber.slice(8, 12)}`;
 
         return {
-            format1: phoneNumber,
-            format2: phoneNumber,
-            format3: phoneNumber,
-            format4: phoneNumber,
-            format5: phoneNumber,
-            format6: phoneNumber,
-            format7: phoneNumber,
-            format8: phoneNumber,
+            format1: formatted1,
+            format2: formatted2,
+            format3: formatted3,
+            format4: formatted4,
+            format5: formatted5,
+            format6: formatted6,
+            format7: formatted7,
+            format8: formatted8,
         };
     };
+
     const getCookie = (name) => {
         const cookies = document.cookie.split(';');
         for (const cookie of cookies) {
