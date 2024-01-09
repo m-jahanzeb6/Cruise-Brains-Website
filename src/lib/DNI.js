@@ -74,7 +74,6 @@ export function DNITesting(){
                 console.error("Error in fetch: " + error.message);
             });
     };
-
     const setCookie = (name, value, days) => {
         const expirationDate = new Date();
         expirationDate.setDate(expirationDate.getDate() + days);

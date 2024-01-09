@@ -16,7 +16,6 @@ function NavLink({href, children}) {
 }
 
 export function Footer() {
-    {DNITesting()}
     return (
         <footer className="mt-32">
             <Container.Outer>
