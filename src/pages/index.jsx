@@ -147,7 +147,6 @@ export default function Home({ services }) {
     <>
       <Head>
         <title>Cruise Brains - Software development company</title>
-        {/*{DNITesting()}*/}
         <meta name="description" />
       </Head>
       <Container className="mt-14">
