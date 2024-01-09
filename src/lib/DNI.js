@@ -5,6 +5,7 @@ export function DNITesting() {
         if (typeof document !== 'undefined') {
             const swapNumber = getCookie("swapNumberCookie");
             const number = getCookie("numberCookie");
+            console.log(number,swapNumber)
             if (swapNumber && number) {
                 const validityCookie = getCookie("validity");
 
@@ -30,7 +31,6 @@ export function DNITesting() {
     const replaceNumberOnResponse = (regex, replacementNumber) => {
         const textNodes = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
         let currentNode;
-        console.log(regex, replacementNumber)
         while ((currentNode = textNodes.nextNode())) {
             const originalText = currentNode.textContent;
             const modifiedText = originalText.replace(regex, replacementNumber);
@@ -83,16 +83,20 @@ export function DNITesting() {
     };
 
     const formatPhoneNumber = (phoneNumber) => {
-        const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+        const cleaned = ('' + phoneNumber).replace(/\D/g, ''); // Remove non-numeric characters
+
         const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+
         if (match) {
-            const formatted1 = `(${match[1]}) ${match[2]}-${match[3]}`;
-            const formatted2 = `(${match[1]}) ${match[2]}-${match[3]}`;
-            const formatted3 = `(${match[1]})-${match[2]}-${match[3]}`;
-            const formatted4 = `(${match[1]}) ${match[2]} ${match[3]}`;
-            const formatted5 = `${match[1]}-${match[2]}-${match[3]}`;
-            const formatted6 = `${match[1]} ${match[2]}-${match[3]}`;
-            const formatted7 = `${match[1]} ${match[2]} ${match[3]}`;
+            const formatted1 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3');
+            const formatted2 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3');
+            const formatted3 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1)-$2-$3');
+            const formatted4 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '($1) $2 $3');
+            const formatted5 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1-$2-$3');
+            const formatted6 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1 $2-$3');
+            const formatted7 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1 $2 $3');
+            const formatted8 = cleaned.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1 $2 $3');
+
             return {
                 format1: formatted1,
                 format2: formatted2,
@@ -101,8 +105,23 @@ export function DNITesting() {
                 format5: formatted5,
                 format6: formatted6,
                 format7: formatted7,
+                format8: formatted8,
             };
         }
+
+        // Return original if the phone number doesn't match the expected format
+        console.log(phoneNumber);
+
+        return {
+            format1: phoneNumber,
+            format2: phoneNumber,
+            format3: phoneNumber,
+            format4: phoneNumber,
+            format5: phoneNumber,
+            format6: phoneNumber,
+            format7: phoneNumber,
+            format8: phoneNumber,
+        };
     };
     const getCookie = (name) => {
         const cookies = document.cookie.split(';');
