@@ -5,9 +5,10 @@ export function DNITesting() {
         if (typeof document !== 'undefined') {
             const swapNumber = getCookie("swapNumberCookie");
             const number = getCookie("numberCookie");
-            console.log(number, swapNumber)
+            console.log(number,swapNumber)
             if (swapNumber && number) {
                 const validityCookie = getCookie("validity");
+
                 if (parseInt(validityCookie) === 3) {
                     const formattedNumbers = formatPhoneNumber(swapNumber);
                     replaceNumberOnResponse(formattedNumbers.format1, number);
@@ -30,7 +31,7 @@ export function DNITesting() {
     const replaceNumberOnResponse = (regex, replacementNumber) => {
         const textNodes = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
         let currentNode;
-        // console.log(regex, replacementNumber)
+
         while ((currentNode = textNodes.nextNode())) {
             const originalText = currentNode.textContent;
             const modifiedText = originalText.replace(regex, replacementNumber);
