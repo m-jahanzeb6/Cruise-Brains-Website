@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import {Container} from '@/components/Container'
-import {DNITesting} from "@/lib/DNI";
 
 function NavLink({href, children}) {
     return (
@@ -15,7 +14,6 @@ function NavLink({href, children}) {
 }
 
 export function Footer() {
-    {DNITesting()}
     return (
         <footer className="mt-32">
             <Container.Outer>
@@ -30,7 +28,6 @@ export function Footer() {
                                 <NavLink href="/contact">Contact</NavLink>
                             </div>
                             <div className="text-sm text-zinc-400 flex dark:text-zinc-500">
-                                <h1>803 317-2399</h1>&nbsp;
                                 <p>&copy; {new Date().getFullYear()} Cruise Brains. All rights
                                     reserved.</p>
                             </div>
