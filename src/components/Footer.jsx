@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import {Container} from '@/components/Container'
-import {useEffect} from "react";
 import {DNITesting} from "@/lib/DNI";
 
 function NavLink({href, children}) {
