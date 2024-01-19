@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-import {Container} from '@/components/Container'
+import { Container } from '@/components/Container'
 
-function NavLink({href, children}) {
+function NavLink({ href, children }) {
     return (
         <Link
             href={href}
@@ -28,7 +28,7 @@ export function Footer() {
                                 <NavLink href="/contact">Contact</NavLink>
                             </div>
                             <div className="text-sm text-zinc-400 flex dark:text-zinc-500">
-                                <p>&copy; {new Date().getFullYear()} Cruise Brains. All rights
+                                <p>&copy; {new Date().getFullYear()} Crusie Brains. All rights
                                     reserved.</p>
                             </div>
                         </div>
