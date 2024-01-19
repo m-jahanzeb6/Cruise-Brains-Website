@@ -28,7 +28,7 @@ export function Footer() {
                                 <NavLink href="/contact">Contact</NavLink>
                             </div>
                             <div className="text-sm text-zinc-400 flex dark:text-zinc-500">
-                                <p>&copy; {new Date().getFullYear()} Crusie Brains. All rights
+                                <p>&copy; {new Date().getFullYear()} Cruise Brains. All rights
                                     reserved.</p>
                             </div>
                         </div>
