@@ -32,7 +32,7 @@ function Form() {
       >
         <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
           <MailIcon className="h-6 w-6 flex-none" />
-          <span className="ml-2">Apply Here</span>
+          <span className="ml-2">Apply Now</span>
         </h2>
         <p className=" pt-2 text-xs text-zinc-900 dark:text-zinc-100">
           Fill up required information asking in the form.
